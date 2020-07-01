@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import NavBar from "./NavBar";
+import React, { useEffect } from "react";
 import ArtistCard from "./ArtistCard";
-import CompPage from "./CompPage";
-import CompAlert from "./CompAlert";
+import artistPicsUrls from "../artistPicsUrls";
+import "./HomePage.css";
 
-export default function HomePage({ artistInfo, handleCompToggle, comps }) {
+export default function HomePage({
+  artistInfo,
+  handleCompToggle,
+  comps,
+  clearComps,
+}) {
+  useEffect(() => {
+    clearComps();
+  }, []);
+
   return (
     <div className="homePage">
       {artistInfo[0]
@@ -15,7 +22,7 @@ export default function HomePage({ artistInfo, handleCompToggle, comps }) {
                 <ArtistCard
                   key={index}
                   name={artist.name}
-                  imageSrc={artist.images[0].url}
+                  imageSrc={artistPicsUrls[index].url}
                   handleCompToggle={() => handleCompToggle(artist)}
                   comps={comps}
                 />
@@ -23,7 +30,6 @@ export default function HomePage({ artistInfo, handleCompToggle, comps }) {
             );
           })
         : null}
-      {comps.length === 2 ? <CompAlert /> : null}
     </div>
   );
 }
