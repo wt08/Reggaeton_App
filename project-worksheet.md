@@ -83,14 +83,14 @@ Time frames are also key in the development cycle. You have limited time to code
 
 | Component     | Priority | Estimated Time | Time Invetsted | Actual Time |
 | ------------- | :------: | :------------: | :------------: | :---------: |
-| Find/Use API  |    H     |      2hrs      |      1hrs      |    -hrs     |
+| Find/Use API  |    H     |      2hrs      |      -hrs      |    1hrs     |
 | Render Data   |    H     |      6hrs      |      -hrs      |    4hrs     |
 | Routing       |    H     |      5hrs      |      -hrs      |   1.5hrs    |
-| Interactivity |    H     |      5hrs      |      -hrs      |   7.5hrs    |
+| Interactivity |    H     |      5hrs      |      -hrs      |   8.5hrs    |
 | Deploying     |    H     |      -hrs      |      -hrs      |    2hrs     |
-| Styling       |    L     |      8hrs      |      -hrs      |    8hrs     |
-| Effects       |    L     |      6hrs      |      -hrs      |    -hrs     |
-| Total         |    H     |     32hrs      |      2hrs      |    -hrs     |
+| Styling       |    L     |      8hrs      |      -hrs      |    6hrs     |
+| Effects       |    L     |      6hrs      |      -hrs      |    3hrs     |
+| Total         |    H     |     32hrs      |      -hrs      |    26hrs    |
 
 ## Additional Libraries
 
