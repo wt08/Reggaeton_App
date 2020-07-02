@@ -8,7 +8,6 @@ import spotifyLogo from "./spotifyLogo";
 import Navbar from "react-bootstrap/Navbar";
 
 function App() {
-  console.log(process.env.REACT_APP_api_key);
 
   const [artistInfo, setArtistInfo] = useState({});
   const [comps, setComps] = useState([]);
@@ -39,8 +38,6 @@ function App() {
       : compsCopy.push(artist);
     setComps(compsCopy);
   };
-
-  console.log(artistInfo);
 
   const clearComps = () => setComps([]);
 
