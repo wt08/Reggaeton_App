@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <div>
       <Navbar bg="light" variant="light">
-        <Link to="/Project-2---React">
+        <Link to="/">
           <Navbar.Brand>Home</Navbar.Brand>
         </Link>
       </Navbar>

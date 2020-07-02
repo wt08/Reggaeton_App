@@ -88,7 +88,8 @@ Time frames are also key in the development cycle. You have limited time to code
 | Render Data   |    H     |      6hrs      |      -hrs      |    4hrs     |
 | Routing       |    H     |      5hrs      |      -hrs      |   1.5hrs    |
 | Interactivity |    H     |      5hrs      |      -hrs      |   7.5hrs    |
-| Styling       |    L     |      8hrs      |      -hrs      |    6hrs     |
+| Deploying     |    H     |      -hrs      |      -hrs      |    2hrs     |
+| Styling       |    L     |      8hrs      |      -hrs      |    8hrs     |
 | Effects       |    L     |      6hrs      |      -hrs      |    -hrs     |
 | Total         |    H     |     32hrs      |      2hrs      |    -hrs     |
 

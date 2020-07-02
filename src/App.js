@@ -5,10 +5,10 @@ import { Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CompPage from "./components/CompPage";
 import NavBar from "./components/NavBar";
-import spotifyLogo from './spotifyLogo'
+import spotifyLogo from "./spotifyLogo";
 
 function App() {
-  let apiToken = process.env.API_KEY;
+  console.log(process.env.REACT_APP_api_key);
 
   const [artistInfo, setArtistInfo] = useState({});
   const [comps, setComps] = useState([]);
@@ -22,7 +22,7 @@ function App() {
     const makeApiCall = async () => {
       const res = await fetch(url, {
         headers: {
-          Authorization: `Bearer ${apiToken}`,
+          Authorization: `Bearer ${process.env.REACT_APP_api_key}`,
         },
       });
       const json = await res.json();
@@ -40,7 +40,7 @@ function App() {
     setComps(compsCopy);
   };
 
-  console.log(comps);
+  console.log(artistInfo);
 
   const clearComps = () => setComps([]);
 
@@ -48,14 +48,16 @@ function App() {
     <div className="App">
       <NavBar />
       <header>
-      <h1><img className='spotify' src={spotifyLogo} alt=''/> Compare</h1>
-      <h2>Pick 2</h2>
+        <h1>
+          <img className="spotify" src={spotifyLogo} alt="" /> Compare
+        </h1>
+        <h2>Pick 2</h2>
       </header>
 
       <main>
         <Switch>
           <Route
-            path="/Project-2---React"
+            exact path="/"
             render={(routerProps) => (
               <HomePage
                 {...routerProps}
@@ -69,7 +71,7 @@ function App() {
           <Route
             path="/CompPage"
             render={(routerProps) => (
-              <CompPage {...routerProps} comps={comps} apiToken={apiToken} done={'70'}/>
+              <CompPage {...routerProps} comps={comps} done={"70"} />
             )}
           />
         </Switch>

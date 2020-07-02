@@ -31,7 +31,7 @@ export default function CompPage({ comps, apiToken, done }) {
     const makeApiCall = async () => {
       const res = await fetch(url, {
         headers: {
-          Authorization: `Bearer ${apiToken}`,
+          Authorization: `Bearer ${process.env.REACT_APP_api_key}`,
         },
       });
       const json = await res.json();
@@ -45,7 +45,7 @@ export default function CompPage({ comps, apiToken, done }) {
     const makeApiCall = async () => {
       const res = await fetch(url, {
         headers: {
-          Authorization: `Bearer ${apiToken}`,
+          Authorization: `Bearer ${process.env.REACT_APP_api_key}`,
         },
       });
       const json = await res.json();
