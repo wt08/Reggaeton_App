@@ -2,16 +2,14 @@
 
 ## Project Links
 
-- [Github](https://github.com/wt08/Project-2---React)
-- [add your deployment link]()
+- [Github](https://github.com/wt08/Reggaeton_App)
+- [Netlify](https://reggaeton-compare.netlify.app/#/)
 
 ## Project Description
 
-Reggaeton artist battle app. Can select from popular artists and comapare them side by side in spotify data. Comparison kind of like Apple Iphone comparison site (https://www.apple.com/iphone/compare/?device1=iphone11pro&device2=iphone11promax&device3=iphoneSE2ndgen) but with more interactivity.
+Reggaeton artist battle app. Can select from popular artists and comapare them side by side in spotify data. Comparison kind of like Apple iPhone comparison site (https://www.apple.com/iphone/compare/?device1=iphone11pro&device2=iphone11promax&device3=iphoneSE2ndgen) but with more interactivity.
 
 ## API
-
-Use this section to include info about the API you have chosen and a code snippet of the data that it returns and is required for your project.
 
 Spotify API artist data:
 
@@ -70,6 +68,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Render data on page
 - Routing
 - Allow user to interact with the page
+- Deploy site
 
 #### PostMVP EXAMPLE
 
@@ -95,14 +94,15 @@ Time frames are also key in the development cycle. You have limited time to code
 
 ## Additional Libraries
 
-Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc.
+Bootstrap
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
+Used .filter to grab the correct image when an artist is selected.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+ <img className="compPic"
+    src={artistPicsUrls.filter((url) => url.name === comps[1].name)[0].url}
+    alt={comps[1].name}
+/>
 ```
