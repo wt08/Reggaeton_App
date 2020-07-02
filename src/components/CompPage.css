@@ -3,12 +3,17 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .artistStats {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  font-family: 'Notable', sans-serif;
 }
 
 .compPic {
@@ -34,6 +39,18 @@
   width: 0;
   transition: width 2s;
 }
+
+.stats_subsection {
+  background-color: lightgray;
+  margin: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.tracks {
+  border: .5px solid white;
+}
+
 
 @media only screen and (min-width: 1024px) {
   .compPage {

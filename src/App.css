@@ -1,10 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .App {
   text-align: center;
 }
 
+.home {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .spotify {
-  height: 50px;
+  height: 30px;
  }
+
+ header h1 {
+   font-size: 20px;
+   font-family: 'Montserrat', sans-serif;
+ }
+
+ header h2 {
+   font-size: 90px;
+   font-family: 'Montserrat', sans-serif;
+ }
+
+ button {
+  font-family: 'Montserrat', sans-serif;
+ }
+
+
 
 
 

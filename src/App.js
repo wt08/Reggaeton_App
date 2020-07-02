@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CompPage from "./components/CompPage";
-import NavBar from "./components/NavBar";
 import spotifyLogo from "./spotifyLogo";
+import Navbar from "react-bootstrap/Navbar";
 
 function App() {
   console.log(process.env.REACT_APP_api_key);
@@ -46,7 +46,11 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <Navbar bg="light" variant="light">
+        <Link to="/">
+          <Navbar.Brand className='home'>Home</Navbar.Brand>
+        </Link>
+      </Navbar>
       <header>
         <h1>
           <img className="spotify" src={spotifyLogo} alt="" /> Compare

@@ -58,7 +58,7 @@ export default function CompPage({ comps, apiToken, done }) {
     <>
       {comps[0] && artistOneTracks.tracks && artistTwoTracks.tracks ? (
         <div className="compPage">
-          <div className='artistStats'>
+          <div className="artistStats">
             <h1>{comps[0].name}</h1>
             <img
               className="compPic"
@@ -68,6 +68,7 @@ export default function CompPage({ comps, apiToken, done }) {
               }
               alt={comps[0].name}
             />
+            <p>Followers: {comps[0].followers.total.toLocaleString("en")}</p>
             <p>Artist Popularity: {comps[0].popularity}</p>
             {/* progress bar credit to Florin Pop:
             https://www.youtube.com/watch?v=AbRgaY0khPM */}
@@ -76,21 +77,23 @@ export default function CompPage({ comps, apiToken, done }) {
                 {comps[0].popularity}
               </div>
             </div>
-            <p>Followers: {comps[0].followers.total}</p>
-            <h3>Top Tracks</h3>
-            {artistOneTracks.tracks.slice(0, 5).map((track) => {
-              return (
-                <>
-                  <p>{track.name}</p>
-                  <p>Popularity: {track.popularity}</p>
-                  <audio controls>
-                    <source src={track.preview_url} type="" />
-                  </audio>
-                </>
-              );
-            })}
+            <div className="stats_subsection">
+              <h3>Top Tracks</h3>
+
+              {artistOneTracks.tracks.slice(0, 5).map((track) => {
+                return (
+                  <div className="tracks">
+                    <p>{track.name}</p>
+                    <p>Popularity: {track.popularity}</p>
+                    <audio controls>
+                      <source src={track.preview_url} type="" />
+                    </audio>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div className='artistStats'>
+          <div className="artistStats">
             <h1>{comps[1].name}</h1>
             <img
               className="compPic"
@@ -100,25 +103,28 @@ export default function CompPage({ comps, apiToken, done }) {
               }
               alt={comps[1].name}
             />
+            <p>Followers: {comps[1].followers.total.toLocaleString("en")}</p>
             <p>Artist Popularity: {comps[1].popularity}</p>
             <div className="progress">
               <div className="progress-done" style={style2}>
                 {comps[1].popularity}
               </div>
             </div>
-            <p>Followers: {comps[1].followers.total}</p>
-            <h3>Top Tracks</h3>
-            {artistTwoTracks.tracks.slice(0, 5).map((track) => {
-              return (
-                <>
-                  <p>{track.name}</p>
-                  <p>Popularity: {track.popularity}</p>
-                  <audio controls>
-                    <source src={track.preview_url} type="" />
-                  </audio>
-                </>
-              );
-            })}
+            <div className="stats_subsection">
+              <h3>Top Tracks</h3>
+
+              {artistTwoTracks.tracks.slice(0, 5).map((track) => {
+                return (
+                  <div className="tracks">
+                    <p>{track.name}</p>
+                    <p>Popularity: {track.popularity}</p>
+                    <audio controls>
+                      <source src={track.preview_url} type="" />
+                    </audio>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       ) : null}
