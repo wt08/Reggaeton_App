@@ -10,21 +10,21 @@ export default function CompPage({ comps, apiToken, done }) {
   const [style1, setStyle1] = useState({});
   const [style2, setStyle2] = useState({});
 
-  // setTimeout(() => {
-  //   const newStyle = {
-  //     opacity: 1,
-  //     width: `${comps[0].popularity}%`,
-  //   };
-  //   setStyle1(newStyle);
-  // }, 500);
+  setTimeout(() => {
+    const newStyle = {
+      opacity: 1,
+      width: `${comps[0].popularity}%`,
+    };
+    setStyle1(newStyle);
+  }, 500);
 
-  // setTimeout(() => {
-  //   const newStyle = {
-  //     opacity: 1,
-  //     width: `${comps[1].popularity}%`,
-  //   };
-  //   setStyle2(newStyle);
-  // }, 500);
+  setTimeout(() => {
+    const newStyle = {
+      opacity: 1,
+      width: `${comps[1].popularity}%`,
+    };
+    setStyle2(newStyle);
+  }, 500);
 
   useEffect(() => {
     const url = `https://api.spotify.com/v1/artists/${artistID[0]}/top-tracks?country=SE`;
