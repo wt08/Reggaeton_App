@@ -69,7 +69,7 @@ export default function CompPage({ comps, apiToken, done }) {
               alt={comps[0].name}
             />
             <p>Followers: {comps[0].followers.total.toLocaleString("en")}</p>
-            <p>Artist Popularity: {comps[0].popularity}</p>
+            <p>Artist Popularity:</p>
             {/* progress bar credit to Florin Pop:
             https://www.youtube.com/watch?v=AbRgaY0khPM */}
             <div className="progress">
@@ -104,7 +104,7 @@ export default function CompPage({ comps, apiToken, done }) {
               alt={comps[1].name}
             />
             <p>Followers: {comps[1].followers.total.toLocaleString("en")}</p>
-            <p>Artist Popularity: {comps[1].popularity}</p>
+            <p>Artist Popularity:</p>
             <div className="progress">
               <div className="progress-done" style={style2}>
                 {comps[1].popularity}
