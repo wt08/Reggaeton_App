@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .artistStats {
@@ -13,7 +13,7 @@
 }
 
 h1 {
-  font-family: 'Notable', sans-serif;
+  font-family: "Notable", sans-serif;
 }
 
 .compPic {
@@ -48,9 +48,8 @@ h1 {
 }
 
 .tracks {
-  border: .5px solid white;
+  border: 0.5px solid white;
 }
-
 
 @media only screen and (min-width: 1024px) {
   .compPage {
