@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import artistPicsUrls from "../artistPicsUrls";
 import "./CompPage.css";
 
-export default function CompPage({ comps, apiToken, done }) {
+export default function CompPage({ accessToken, comps, apiToken, done }) {
   const artistID = comps.map((artist) => artist.id);
 
   const [artistOneTracks, setArtistOneTracks] = useState({});
@@ -31,7 +31,7 @@ export default function CompPage({ comps, apiToken, done }) {
     const makeApiCall = async () => {
       const res = await fetch(url, {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_api_key}`,
+          Authorization: `Bearer ${accessToken}`,
         },
       });
       const json = await res.json();
@@ -45,7 +45,7 @@ export default function CompPage({ comps, apiToken, done }) {
     const makeApiCall = async () => {
       const res = await fetch(url, {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_api_key}`,
+          Authorization: `Bearer ${accessToken}`,
         },
       });
       const json = await res.json();

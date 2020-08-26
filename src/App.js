@@ -9,6 +9,8 @@ import Navbar from "react-bootstrap/Navbar";
 
 function App() {
 
+  const credentials = process.env.REACT_APP_api_credentials
+  const [accessToken, setAccessToken] = useState({})
   const [artistInfo, setArtistInfo] = useState({});
   const [comps, setComps] = useState([]);
   if (comps.length > 2) {
@@ -16,17 +18,29 @@ function App() {
   }
 
   useEffect(() => {
-    const url =
-      "https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,1i8SpTcr7yvPOmcqrbnVXY,4obzFoKoKRHIphyHzJ35G3,7iK8PXO48WeuP03g8YR51W,1GDbiv3spRmZ1XdM1jQbT7";
-    const makeApiCall = async () => {
-      const res = await fetch(url, {
+    const getKey = async () => {
+      const res = await fetch("https://accounts.spotify.com/api/token", {
+        method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_api_key}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization:
+            `Basic ${credentials}`,
         },
+        body: "grant_type=client_credentials",
       });
       const json = await res.json();
-      setArtistInfo(json.artists);
+      setAccessToken(json.access_token)
     };
+    const makeApiCall = async () => {
+          const res = await fetch("https://api.spotify.com/v1/artists?ids=4q3ewBCX7sLwd24euuV69X,1i8SpTcr7yvPOmcqrbnVXY,4obzFoKoKRHIphyHzJ35G3,7iK8PXO48WeuP03g8YR51W,1GDbiv3spRmZ1XdM1jQbT7", {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+          const json = await res.json();
+          setArtistInfo(json.artists);
+        };
+    getKey();
     makeApiCall();
   }, []);
 
@@ -45,7 +59,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" variant="light">
         <Link to="/">
-          <Navbar.Brand className='home'>Home</Navbar.Brand>
+          <Navbar.Brand className="home">Home</Navbar.Brand>
         </Link>
       </Navbar>
       <header>
@@ -58,7 +72,8 @@ function App() {
       <main>
         <Switch>
           <Route
-            exact path="/"
+            exact
+            path="/"
             render={(routerProps) => (
               <HomePage
                 {...routerProps}
@@ -72,7 +87,7 @@ function App() {
           <Route
             path="/CompPage"
             render={(routerProps) => (
-              <CompPage {...routerProps} comps={comps} done={"70"} />
+              <CompPage {...routerProps} accessToken={accessToken} comps={comps} done={"70"} />
             )}
           />
         </Switch>
