@@ -1,8 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project Title
+# Artist Compare App
 
-Reggaeton Spotify Compare App
+[Live Site](https://reggaeton-compare.netlify.app/#/)  
+
+This application compares real-time spotify data of top musical artists.  
+
+## Frameworks/Libraries
+React  
+Bootstrap  
 
 ## Motivation
 
