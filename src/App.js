@@ -5,18 +5,18 @@ import { Route, Link, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CompPage from "./components/CompPage";
 import spotifyLogo from "./spotifyLogo";
-import Navbar from "react-bootstrap/Navbar";
+import Nav from './components/Nav'
 
 function App() {
 
   const credentials = process.env.REACT_APP_api_credentials
   const [accessToken, setAccessToken] = useState({})
   const [artistInfo, setArtistInfo] = useState({});
+  console.log(artistInfo)
   const [comps, setComps] = useState([]);
-  if (comps.length > 2) {
-    setComps([]);
-  }
-
+  console.log(comps);
+  
+ 
   useEffect(() => {
     const getKey = async () => {
       const res = await fetch("https://accounts.spotify.com/api/token", {
@@ -44,27 +44,14 @@ function App() {
     makeApiCall();
   }, []);
 
-  const handleCompToggle = (artist) => {
-    const compsCopy = [...comps];
-    const artistIndex = compsCopy.indexOf(artist);
-    artistIndex > -1
-      ? compsCopy.splice(artistIndex, 1)
-      : compsCopy.push(artist);
-    setComps(compsCopy);
-  };
-
-  const clearComps = () => setComps([]);
+  
 
   return (
     <div className="App">
-      <Navbar bg="light" variant="light">
-        <Link to="/">
-          <Navbar.Brand className="home">Home</Navbar.Brand>
-        </Link>
-      </Navbar>
+      <Nav />
       <header>
         <h1>
-          <img className="spotify" src={spotifyLogo} alt="" /> Compare
+          <img className="spotify" src={spotifyLogo} alt="spotify logo" /> Compare
         </h1>
         <h2>Pick 2</h2>
       </header>
@@ -78,9 +65,8 @@ function App() {
               <HomePage
                 {...routerProps}
                 artistInfo={artistInfo}
-                handleCompToggle={handleCompToggle}
                 comps={comps}
-                clearComps={clearComps}
+                setComps={setComps}
               />
             )}
           />
