@@ -15,7 +15,7 @@ export default function SelectButton( { handleCompToggle } ) {
 
   return (
     <>
-      <Button variant="warning" onClick={combineOnClick}>{select ? 'Select' : 'Unselect'}</Button>
+      {/* <Button variant="warning" onClick={combineOnClick}>{select ? 'Select' : 'Unselect'}</Button> */}
     </>
   );
 }
