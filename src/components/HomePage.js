@@ -18,18 +18,17 @@ export default function HomePage({
       {artistInfo[0]
         ? artistInfo.map((artist, index) => {
             return (
-              <>
+              <div key={artist.id}>
                 <ArtistCard
-                  key={index}
                   name={artist.name}
                   imageSrc={artistPicsUrls[index].url}
                   handleCompToggle={() => handleCompToggle(artist)}
                   comps={comps}
                 />
-              </>
+              </div>
             );
           })
-        : null}
+        : <h1>Loading....</h1>}
     </div>
   );
 }
