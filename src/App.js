@@ -10,9 +10,7 @@ import Navbar from "react-bootstrap/Navbar";
 function App() {
   const credentials = process.env.REACT_APP_api_credentials;
   const [accessToken, setAccessToken] = useState(null);
-  console.log('accesstoken ', accessToken)
   const [artistInfo, setArtistInfo] = useState(null);
-  console.log("artistinfo ", artistInfo);
   const [comps, setComps] = useState([]);
   if (comps.length > 2) {
     setComps([]);
