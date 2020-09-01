@@ -15,7 +15,7 @@ export default function HomePage({ artistInfo, comps, setComps, routerProps }) {
 
   return (
     <div className="homePage">
-      {comps.length === 2 ? routerProps.history.push('/comppage') : null}
+      {comps.length === 2 ? routerProps.history.push("/comppage") : null}
       {artistInfo ? (
         artistInfo.map((artist, index) => {
           return (

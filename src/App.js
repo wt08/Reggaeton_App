@@ -8,12 +8,11 @@ import spotifyLogo from "./spotifyLogo";
 import Nav from "./components/Nav";
 
 function App() {
-
   const credentials = process.env.REACT_APP_api_credentials;
   const [accessToken, setAccessToken] = useState(null);
   const [artistInfo, setArtistInfo] = useState(null);
   const [comps, setComps] = useState([]);
-  console.log(comps)
+  console.log(comps);
 
   // creating API call function with parameter of access token
   const makeApiCall = async (token) => {
@@ -54,7 +53,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav setComps={setComps}/>
+      <Nav setComps={setComps} />
       <header>
         <h1>
           <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
