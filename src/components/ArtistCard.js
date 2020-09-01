@@ -15,9 +15,9 @@ export default function ArtistCard({
       <h2>{name}</h2>
       <img className="artistImage" src={imageSrc} alt={name} />
       {/* <SelectButton handleCompToggle={handleCompToggle} /> */}
-      {comps.length === 2 && comps[comps.length - 1].name === name ? (
+      {/* {comps.length === 2 && comps[comps.length - 1].name === name ? (
         <CompAlert />
-      ) : null}
+      ) : null} */}
     </div>
   );
 }

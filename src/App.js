@@ -8,6 +8,7 @@ import spotifyLogo from "./spotifyLogo";
 import Nav from "./components/Nav";
 
 function App() {
+
   const credentials = process.env.REACT_APP_api_credentials;
   const [accessToken, setAccessToken] = useState(null);
   const [artistInfo, setArtistInfo] = useState(null);
