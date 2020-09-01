@@ -3,55 +3,62 @@ import artistPicsUrls from "../artistPicsUrls";
 import "./CompPage.css";
 
 export default function CompPage({ accessToken, comps, apiToken, done }) {
-  const artistID = comps.map((artist) => artist.id);
+
+  console.log(comps)
 
   const [artistOneTracks, setArtistOneTracks] = useState({});
+  console.log(artistOneTracks)
   const [artistTwoTracks, setArtistTwoTracks] = useState({});
-  const [style1, setStyle1] = useState({});
-  const [style2, setStyle2] = useState({});
+  console.log(artistTwoTracks)
 
-  setTimeout(() => {
-    const newStyle = {
-      opacity: 1,
-      width: `${comps[0].popularity}%`,
-    };
-    setStyle1(newStyle);
-  }, 500);
+  // const [style1, setStyle1] = useState({});
+  // const [style2, setStyle2] = useState({});
 
-  setTimeout(() => {
-    const newStyle = {
-      opacity: 1,
-      width: `${comps[1].popularity}%`,
-    };
-    setStyle2(newStyle);
-  }, 500);
+  // setTimeout(() => {
+  //   const newStyle = {
+  //     opacity: 1,
+  //     width: `${comps[0].popularity}%`,
+  //   };
+  //   setStyle1(newStyle);
+  // }, 500);
 
-  useEffect(() => {
-    const url = `https://api.spotify.com/v1/artists/${artistID[0]}/top-tracks?country=SE`;
-    const makeApiCall = async () => {
-      const res = await fetch(url, {
+  // setTimeout(() => {
+  //   const newStyle = {
+  //     opacity: 1,
+  //     width: `${comps[1].popularity}%`,
+  //   };
+  //   setStyle2(newStyle);
+  // }, 500);
+
+  const makeArtist1ApiCall = async () => {
+    const res = await fetch(
+      `https://api.spotify.com/v1/artists/${comps[0] ? comps[0].id : null}/top-tracks?country=SE`,
+      {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-      });
-      const json = await res.json();
-      setArtistOneTracks(json);
-    };
-    makeApiCall();
-  }, []);
+      }
+    );
+    const json = await res.json();
+    setArtistOneTracks(json);
+  };
 
-  useEffect(() => {
-    const url = `https://api.spotify.com/v1/artists/${artistID[1]}/top-tracks?country=SE`;
-    const makeApiCall = async () => {
-      const res = await fetch(url, {
+  const makeArtist2ApiCall = async () => {
+    const res = await fetch(
+      `https://api.spotify.com/v1/artists/${comps[1].id ? comps[1].id : null}/top-tracks?country=SE`,
+      {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
-      });
-      const json = await res.json();
-      setArtistTwoTracks(json);
-    };
-    makeApiCall();
+      }
+    );
+    const json = await res.json();
+    setArtistTwoTracks(json);
+  };
+
+  useEffect(() => {
+    makeArtist1ApiCall();
+    makeArtist2ApiCall();
   }, []);
 
   return (
@@ -73,7 +80,7 @@ export default function CompPage({ accessToken, comps, apiToken, done }) {
             {/* progress bar credit to Florin Pop:
             https://www.youtube.com/watch?v=AbRgaY0khPM */}
             <div className="progress">
-              <div className="progress-done" style={style1}>
+              <div className="progress-done" /*style={style1}*/>
                 {comps[0].popularity}
               </div>
             </div>
@@ -106,7 +113,7 @@ export default function CompPage({ accessToken, comps, apiToken, done }) {
             <p>Followers: {comps[1].followers.total.toLocaleString("en")}</p>
             <p>Artist Popularity:</p>
             <div className="progress">
-              <div className="progress-done" style={style2}>
+              <div className="progress-done" /*style={style2}*/>
                 {comps[1].popularity}
               </div>
             </div>
