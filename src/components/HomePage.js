@@ -3,7 +3,7 @@ import ArtistCard from "./ArtistCard";
 import artistPicsUrls from "../artistPicsUrls";
 import "./HomePage.css";
 
-export default function HomePage({ artistInfo, comps, setComps }) {
+export default function HomePage({ artistInfo, comps, setComps, routerProps }) {
   const handleCompToggle = (artist) => {
     const compsCopy = [...comps];
     const artistIndex = compsCopy.indexOf(artist);
@@ -15,6 +15,7 @@ export default function HomePage({ artistInfo, comps, setComps }) {
 
   return (
     <div className="homePage">
+      {comps.length === 2 ? routerProps.history.push('/comppage') : null}
       {artistInfo ? (
         artistInfo.map((artist, index) => {
           return (

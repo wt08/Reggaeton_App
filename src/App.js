@@ -13,9 +13,7 @@ function App() {
   const [accessToken, setAccessToken] = useState(null);
   const [artistInfo, setArtistInfo] = useState(null);
   const [comps, setComps] = useState([]);
-  if (comps.length > 2) {
-    setComps([]);
-  }
+  console.log(comps)
 
   // creating API call function with parameter of access token
   const makeApiCall = async (token) => {
@@ -56,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav setComps={setComps}/>
       <header>
         <h1>
           <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
@@ -72,7 +70,7 @@ function App() {
             path="/"
             render={(routerProps) => (
               <HomePage
-                {...routerProps}
+                routerProps={routerProps}
                 artistInfo={artistInfo}
                 comps={comps}
                 setComps={setComps}
@@ -80,7 +78,7 @@ function App() {
             )}
           />
           <Route
-            path="/CompPage"
+            path="/comppage"
             render={(routerProps) => (
               <CompPage
                 {...routerProps}
