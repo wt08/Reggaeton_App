@@ -15,7 +15,7 @@ export default function HomePage({
 
   return (
     <div className="homePage">
-      {artistInfo[0]
+      {artistInfo
         ? artistInfo.map((artist, index) => {
             return (
               <div key={artist.id}>

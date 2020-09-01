@@ -12,7 +12,7 @@ function App() {
   const credentials = process.env.REACT_APP_api_credentials
   const [accessToken, setAccessToken] = useState({})
   // console.log(accessToken)
-  const [artistInfo, setArtistInfo] = useState({});
+  const [artistInfo, setArtistInfo] = useState(null);
   // console.log(artistInfo)
   const [comps, setComps] = useState([]);
   if (comps.length > 2) {
