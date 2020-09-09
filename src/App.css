@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Notable&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .App {
   text-align: center;
+  /* photo cred to Alexis Antonio via unsplashed  https://unsplash.com/photos/273_wcQPfYw */
+  background: url("https://res.cloudinary.com/dgbf3yxnd/image/upload/v1599676769/alexis-antonio-273_wcQPfYw-unsplash_lo1hub.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .home {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .spotify {
   height: 30px;
- }
+}
 
- header h1 {
-   font-size: 20px;
-   font-family: 'Montserrat', sans-serif;
- }
+header h1 {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
 
- header h2 {
-   font-size: 90px;
-   font-family: 'Montserrat', sans-serif;
- }
+header h2 {
+  font-size: 90px;
+  font-family: "Montserrat", sans-serif;
+}
 
- button {
-  font-family: 'Montserrat', sans-serif;
- }
-
-
-
-
-
+button {
+  font-family: "Montserrat", sans-serif;
+}
