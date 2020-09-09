@@ -10,6 +10,7 @@
     "install": "^0.13.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
+    "react-countup": "^4.3.3",
     "react-customizable-progressbar": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-js-loading-progress-bar": "^0.3.1",

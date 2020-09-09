@@ -20,8 +20,13 @@ header h2 {
   color: white;
 }
 
+main h1 {
+    color: white;
+}
+
 @media only screen and (min-width: 768px) {
   main {
     display: flex;
+    align-items: center;
   }
 }

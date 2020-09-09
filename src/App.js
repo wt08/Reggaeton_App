@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Link, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import CompPage from "./components/CompPage";
+import FollowerCompare from "./components/FollowerCompare";
 
 function App() {
   const credentials = process.env.REACT_APP_api_credentials;
@@ -65,6 +65,16 @@ function App() {
           )}
         />
         <Route
+          path="/followercompare"
+          render={(routerProps) => (
+            <FollowerCompare
+              {...routerProps}
+              accessToken={accessToken}
+              comps={comps}
+            />
+          )}
+        />
+        {/* <Route
           path="/comppage"
           render={(routerProps) => (
             <CompPage
@@ -74,7 +84,7 @@ function App() {
               done={"70"}
             />
           )}
-        />
+        /> */}
       </Switch>
     </div>
   );

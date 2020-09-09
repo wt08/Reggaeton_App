@@ -6,29 +6,9 @@ export default function CompPage({ accessToken, comps, apiToken, done }) {
 
   console.log(comps)
 
-  const [artistOneTracks, setArtistOneTracks] = useState({});
+  const [artistsTracks, setArtistsTracks] = useState([]);
   console.log(artistOneTracks)
-  const [artistTwoTracks, setArtistTwoTracks] = useState({});
-  console.log(artistTwoTracks)
-
-  // const [style1, setStyle1] = useState({});
-  // const [style2, setStyle2] = useState({});
-
-  // setTimeout(() => {
-  //   const newStyle = {
-  //     opacity: 1,
-  //     width: `${comps[0].popularity}%`,
-  //   };
-  //   setStyle1(newStyle);
-  // }, 500);
-
-  // setTimeout(() => {
-  //   const newStyle = {
-  //     opacity: 1,
-  //     width: `${comps[1].popularity}%`,
-  //   };
-  //   setStyle2(newStyle);
-  // }, 500);
+ 
 
   const makeArtist1ApiCall = async () => {
     const res = await fetch(
@@ -66,24 +46,12 @@ export default function CompPage({ accessToken, comps, apiToken, done }) {
       {comps[0] && artistOneTracks.tracks && artistTwoTracks.tracks ? (
         <div className="compPage">
           <div className="artistStats">
-            <h1>{comps[0].name}</h1>
-            <img
-              className="compPic"
-              src={
-                artistPicsUrls.filter((url) => url.name === comps[0].name)[0]
-                  .url
-              }
-              alt={comps[0].name}
-            />
-            <p>Followers: {comps[0].followers.total.toLocaleString("en")}</p>
             <p>Artist Popularity:</p>
-            {/* progress bar credit to Florin Pop:
-            https://www.youtube.com/watch?v=AbRgaY0khPM */}
-            <div className="progress">
+            
               <div className="progress-done" /*style={style1}*/>
                 {comps[0].popularity}
               </div>
-            </div>
+            
             <div className="stats_subsection">
               <h3>Top Tracks</h3>
 
@@ -100,23 +68,7 @@ export default function CompPage({ accessToken, comps, apiToken, done }) {
               })}
             </div>
           </div>
-          <div className="artistStats">
-            <h1>{comps[1].name}</h1>
-            <img
-              className="compPic"
-              src={
-                artistPicsUrls.filter((url) => url.name === comps[1].name)[0]
-                  .url
-              }
-              alt={comps[1].name}
-            />
-            <p>Followers: {comps[1].followers.total.toLocaleString("en")}</p>
-            <p>Artist Popularity:</p>
-            <div className="progress">
-              <div className="progress-done" /*style={style2}*/>
-                {comps[1].popularity}
-              </div>
-            </div>
+    
             <div className="stats_subsection">
               <h3>Top Tracks</h3>
 

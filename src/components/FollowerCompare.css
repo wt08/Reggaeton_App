@@ -1,0 +1,41 @@
+.followerCompare h1 {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+.followersMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.countup {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.followersCard {
+    padding-top: 20px;
+}
+
+.followersCard h4 {
+    font-family: "Notable", sans-serif;
+    color: white;
+}
+
+.followersCard img {
+    width: 70%;
+    border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .followersMain {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

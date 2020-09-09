@@ -9,6 +9,7 @@ This application compares real-time spotify data of top musical artists.
 ## Frameworks/Libraries
 React  
 Bootstrap  
+React-Countup
 
 ## Motivation
 
