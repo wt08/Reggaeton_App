@@ -20,26 +20,6 @@ h1 {
   border-radius: 20px;
 }
 
-.progress {
-  height: 30px;
-  width: 100%;
-  background-color: lightgrey;
-  border-radius: 20px;
-}
-
-.progress-done {
-  height: 100%;
-  background: #1db954;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  width: 0;
-  transition: width 2s;
-}
-
 .stats_subsection {
   background-color: lightgray;
   margin: 10px;

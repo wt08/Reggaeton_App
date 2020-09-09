@@ -4,6 +4,7 @@ import artistPicsUrls from "../artistPicsUrls";
 import "./HomePage.css";
 import Nav from "./Nav";
 import spotifyLogo from "../spotifyLogo";
+import Footer from './Footer'
 
 export default function HomePage({ artistInfo, comps, setComps, routerProps }) {
   const handleCompToggle = (artist) => {
@@ -45,6 +46,7 @@ export default function HomePage({ artistInfo, comps, setComps, routerProps }) {
           <h1>Loading....</h1>
         )}
       </main>
+      <Footer/>
     </div>
   );
 }

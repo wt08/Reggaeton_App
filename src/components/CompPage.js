@@ -11,25 +11,6 @@ export default function CompPage({ accessToken, comps, apiToken, done }) {
   const [artistTwoTracks, setArtistTwoTracks] = useState({});
   console.log(artistTwoTracks)
 
-  // const [style1, setStyle1] = useState({});
-  // const [style2, setStyle2] = useState({});
-
-  // setTimeout(() => {
-  //   const newStyle = {
-  //     opacity: 1,
-  //     width: `${comps[0].popularity}%`,
-  //   };
-  //   setStyle1(newStyle);
-  // }, 500);
-
-  // setTimeout(() => {
-  //   const newStyle = {
-  //     opacity: 1,
-  //     width: `${comps[1].popularity}%`,
-  //   };
-  //   setStyle2(newStyle);
-  // }, 500);
-
   const makeArtist1ApiCall = async () => {
     const res = await fetch(
       `https://api.spotify.com/v1/artists/${comps[0] ? comps[0].id : null}/top-tracks?country=SE`,
