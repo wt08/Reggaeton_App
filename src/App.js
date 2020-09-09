@@ -4,8 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Link, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CompPage from "./components/CompPage";
-import spotifyLogo from "./spotifyLogo";
-import Nav from "./components/Nav";
 
 function App() {
   const credentials = process.env.REACT_APP_api_credentials;
@@ -53,42 +51,31 @@ function App() {
 
   return (
     <div className="App">
-      <Nav setComps={setComps} />
-      <header>
-        <h1>
-          <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
-          Compare
-        </h1>
-        <h2>Pick 2</h2>
-      </header>
-
-      <main>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(routerProps) => (
-              <HomePage
-                routerProps={routerProps}
-                artistInfo={artistInfo}
-                comps={comps}
-                setComps={setComps}
-              />
-            )}
-          />
-          <Route
-            path="/comppage"
-            render={(routerProps) => (
-              <CompPage
-                {...routerProps}
-                accessToken={accessToken}
-                comps={comps}
-                done={"70"}
-              />
-            )}
-          />
-        </Switch>
-      </main>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={(routerProps) => (
+            <HomePage
+              routerProps={routerProps}
+              artistInfo={artistInfo}
+              comps={comps}
+              setComps={setComps}
+            />
+          )}
+        />
+        <Route
+          path="/comppage"
+          render={(routerProps) => (
+            <CompPage
+              {...routerProps}
+              accessToken={accessToken}
+              comps={comps}
+              done={"70"}
+            />
+          )}
+        />
+      </Switch>
     </div>
   );
 }

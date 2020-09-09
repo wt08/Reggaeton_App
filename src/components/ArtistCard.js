@@ -1,6 +1,4 @@
 import React from "react";
-import SelectButton from "./SelectButton";
-import CompAlert from "./CompAlert";
 import "./ArtistCard.css";
 
 export default function ArtistCard({

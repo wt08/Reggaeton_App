@@ -7,27 +7,12 @@
   background: url("https://res.cloudinary.com/dgbf3yxnd/image/upload/v1599676769/alexis-antonio-273_wcQPfYw-unsplash_lo1hub.jpg");
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 }
 
-.home {
-  font-family: "Montserrat", sans-serif;
-}
 
-.spotify {
-  height: 30px;
-}
-
-header h1 {
-  font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-}
-
-header h2 {
-  font-size: 90px;
-  font-family: "Montserrat", sans-serif;
-}
-
-button {
-  font-family: "Montserrat", sans-serif;
+@media only screen and (min-width: 768px) {
+  .App {
+    height: 100vh;
+  }
 }

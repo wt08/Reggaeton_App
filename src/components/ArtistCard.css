@@ -33,6 +33,7 @@
   margin-bottom: 20px;
 }
 
-h2 {
+.artistCard h2 {
   font-family: "Notable", sans-serif;
+  color: white;
 }

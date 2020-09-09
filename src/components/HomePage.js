@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ArtistCard from "./ArtistCard";
 import artistPicsUrls from "../artistPicsUrls";
 import "./HomePage.css";
+import Nav from "./Nav";
+import spotifyLogo from "../spotifyLogo";
 
 export default function HomePage({ artistInfo, comps, setComps, routerProps }) {
   const handleCompToggle = (artist) => {
@@ -15,24 +17,34 @@ export default function HomePage({ artistInfo, comps, setComps, routerProps }) {
 
   return (
     <div className="homePage">
-      {comps.length === 2 ? routerProps.history.push("/comppage") : null}
-      {artistInfo ? (
-        artistInfo.map((artist, index) => {
-          return (
-            <div key={artist.id}>
-              <ArtistCard
-                artist={artist}
-                name={artist.name}
-                imageSrc={artist.images[0].url}
-                handleCompToggle={() => handleCompToggle(artist)}
-                comps={comps}
-              />
-            </div>
-          );
-        })
-      ) : (
-        <h1>Loading....</h1>
-      )}
+      <header>
+        <Nav setComps={setComps} />
+        <h1>
+          <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
+          Compare
+        </h1>
+        <h2>Pick 2</h2>
+      </header>
+      <main>
+        {comps.length === 2 ? routerProps.history.push("/comppage") : null}
+        {artistInfo ? (
+          artistInfo.map((artist, index) => {
+            return (
+              <div key={artist.id}>
+                <ArtistCard
+                  artist={artist}
+                  name={artist.name}
+                  imageSrc={artist.images[0].url}
+                  handleCompToggle={() => handleCompToggle(artist)}
+                  comps={comps}
+                />
+              </div>
+            );
+          })
+        ) : (
+          <h1>Loading....</h1>
+        )}
+      </main>
     </div>
   );
 }
