@@ -5,25 +5,27 @@ import CountUp from "react-countup";
 import Nav from "./Nav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const FollowerCompare = ({ comps, setComps }) => {
   const [isEffect, setIsEffect] = useState(false);
-  console.log(isEffect)
 
   return (
     <div className="followerCompare">
       <div className="headingFollower">
         <Nav setComps={setComps} />
-        <FontAwesomeIcon
-          icon={faArrowRight}
-          className={`arrowRightFollower ${isEffect ? "bounce" : null}`}
-        />
+        <Link to="/popularitycompare">
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className={`arrowRightFollower ${isEffect ? "bounce" : null}`}
+          />
+        </Link>
       </div>
       <h1>Followers</h1>
-      <div className="followersMain">
+      <div className="followerMain">
         {comps.map((artist) => {
           return (
-            <div className="followersCard">
+            <div className="followerCard">
               <CountUp
                 end={artist.followers.total}
                 duration={2}

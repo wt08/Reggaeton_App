@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import FollowerCompare from "./components/FollowerCompare";
+import PopularityCompare from "./components/PopularityCompare";
 
 function App() {
   const credentials = process.env.REACT_APP_api_credentials;
@@ -68,6 +69,17 @@ function App() {
           path="/followercompare"
           render={(routerProps) => (
             <FollowerCompare
+              {...routerProps}
+              accessToken={accessToken}
+              comps={comps}
+              setComps={setComps}
+            />
+          )}
+        />
+         <Route
+          path="/popularitycompare"
+          render={(routerProps) => (
+            <PopularityCompare
               {...routerProps}
               accessToken={accessToken}
               comps={comps}

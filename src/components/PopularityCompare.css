@@ -1,0 +1,62 @@
+.popularityCompare {
+  height: 100vh;
+}
+
+.headingPopularity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.arrowRightPopularity {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 55px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.popularityCompare h1 {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: bolder;
+  font-size: 60px;
+  -webkit-text-stroke: 2px black;
+}
+
+.popularityMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popularityCard {
+  width: 45%;
+}
+
+.popularityCard h4 {
+  font-family: "Notable", sans-serif;
+  color: white;
+}
+
+.popularityCard img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .popularityCompare h1 {
+      padding: 0;
+    }
+  
+    .popularityCard {
+      width: 30%;
+    }
+  
+    .popularityCard img {
+      width: 70%;
+    }
+  }
