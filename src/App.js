@@ -71,6 +71,7 @@ function App() {
               {...routerProps}
               accessToken={accessToken}
               comps={comps}
+              setComps={setComps}
             />
           )}
         />

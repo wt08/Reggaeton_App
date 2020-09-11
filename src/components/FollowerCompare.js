@@ -4,10 +4,12 @@ import "./FollowerCompare.css";
 import CountUp from "react-countup";
 import Nav from "./Nav";
 
-const FollowerCompare = ({ comps }) => {
+const FollowerCompare = ({ comps, setComps}) => {
+ 
+
   return (
     <div className="followerCompare">
-      <Nav />
+      <Nav setComps={setComps}/>
       <h1>Followers:</h1>
       <div className="followersMain">
         {comps.map((artist) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ArtistCard from "./ArtistCard";
 import artistPicsUrls from "../artistPicsUrls";
 import "./HomePage.css";
@@ -7,9 +7,6 @@ import spotifyLogo from "../spotifyLogo";
 import Footer from "./Footer";
 
 const HomePage = ({ artistInfo, comps, setComps, routerProps }) => {
-  useEffect(() => {
-    setComps([]);
-  }, []);
 
   const handleCompToggle = (artist) => {
     const compsCopy = [...comps];
@@ -27,7 +24,7 @@ const HomePage = ({ artistInfo, comps, setComps, routerProps }) => {
   return (
     <div className="homePage">
       <header>
-        <Nav/>
+        <Nav setComps={setComps}/>
         <div className="appName">
           <h1>
             <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
