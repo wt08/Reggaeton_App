@@ -2,18 +2,20 @@ import React from "react";
 import Footer from "./Footer";
 import "./FollowerCompare.css";
 import CountUp from "react-countup";
+import Nav from "./Nav";
 
 const FollowerCompare = ({ comps }) => {
   return (
     <div className="followerCompare">
-        <h1>Followers:</h1>
+      <Nav />
+      <h1>Followers:</h1>
       <div className="followersMain">
         {comps.map((artist) => {
           return (
             <div className="followersCard">
               <CountUp
                 end={artist.followers.total}
-                duration={4}
+                duration={2}
                 separator={","}
                 className="countup"
               />

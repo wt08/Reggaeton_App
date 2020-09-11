@@ -7,6 +7,10 @@ import spotifyLogo from "../spotifyLogo";
 import Footer from "./Footer";
 
 const HomePage = ({ artistInfo, comps, setComps, routerProps }) => {
+  useEffect(() => {
+    setComps([]);
+  }, []);
+
   const handleCompToggle = (artist) => {
     const compsCopy = [...comps];
     const artistIndex = compsCopy.indexOf(artist);
@@ -23,11 +27,13 @@ const HomePage = ({ artistInfo, comps, setComps, routerProps }) => {
   return (
     <div className="homePage">
       <header>
-        <Nav setComps={setComps} />
-        <h1>
-          <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
-          Compare
-        </h1>
+        <Nav/>
+        <div className="appName">
+          <h1>
+            <img className="spotify" src={spotifyLogo} alt="spotify logo" />{" "}
+            Compare
+          </h1>
+        </div>
         <h2>Pick 2</h2>
       </header>
       <main>

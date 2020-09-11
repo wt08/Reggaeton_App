@@ -1,21 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
-import Navbar from "react-bootstrap/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ( {setComps} ) => {
-
-  const handleOnClick = () => {
-    setComps([])
-  }
-
+const Nav = () => {
   return (
     <div className="nav">
-     <Navbar onClick={handleOnClick} bg="light" variant="light">
-        <Link to="/">
-          <Navbar.Brand className="home">Home</Navbar.Brand>
-        </Link>
-      </Navbar>
+      <Link to="/">
+        <FontAwesomeIcon icon={faHome} className="homeIcon"/>
+      </Link>
     </div>
   );
 };

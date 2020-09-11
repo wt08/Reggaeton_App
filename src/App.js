@@ -74,17 +74,6 @@ function App() {
             />
           )}
         />
-        {/* <Route
-          path="/comppage"
-          render={(routerProps) => (
-            <CompPage
-              {...routerProps}
-              accessToken={accessToken}
-              comps={comps}
-              done={"70"}
-            />
-          )}
-        /> */}
       </Switch>
     </div>
   );
